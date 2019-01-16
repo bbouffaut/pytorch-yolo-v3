@@ -39,7 +39,7 @@ def get_test_input(input_dim, CUDA):
     
     if CUDA:
         img_ = img_.cuda()
-    num_classes
+    #num_classes
     return img_
 
 
@@ -76,9 +76,7 @@ def arg_parse():
     
     return parser.parse_args()
 
-if __name__ ==  '__main__':
-    args = arg_parse()
-    
+def detect(args):
     scales = args.scales
     
     
@@ -320,6 +318,14 @@ if __name__ ==  '__main__':
 
     
     torch.cuda.empty_cache()
+    
+
+if __name__ ==  '__main__':
+    args = arg_parse()
+    
+    detect(args)
+    
+    
     
     
         
